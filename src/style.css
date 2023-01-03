@@ -1,0 +1,20 @@
+:root {
+  --dark-blue: #2b2d42;
+  --mid-gray: #8d99ae;
+  --light-gray: #edf2f4;
+  --light-red: #ef233c;
+  --darker-red: #d90429;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+}
+
+.whole-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
