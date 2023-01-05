@@ -1,9 +1,39 @@
 .home {
-}
-
-.home {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-position: center;
   background-size: cover;
+  background-image: url("../../assets/background.jpg");
+  overflow: hidden;
+  display: flex;
+  color: white;
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  height: 100%;
+  padding-right: 3%;
+}
+
+.home-header {
+  font-weight: 900;
+  font-size: 32px;
+  margin: 0;
+}
+
+.sub-text {
+  margin: 0;
+  font-size: 20px;
+}
+
+@media (max-width: 615px) {
+  .home-container {
+    align-items: center;
+    text-align: center;
+    color: darkred;
+  }
 }

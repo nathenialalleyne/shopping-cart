@@ -9,11 +9,22 @@ export const amountSlice = createSlice({
   },
 
   reducers: {
-    change: (state, action) => {
+    addQuant: (state, action) => {
       state.items.forEach((e) => {
         if (e.productName === action.payload) {
           e.productQuantity += 1;
           console.log(e.productQuantity);
+        }
+      });
+    },
+
+    remQuant: (state, action) => {
+      state.items.forEach((e) => {
+        if (e.productName === action.payload) {
+          if (e.productQuantity > 0) {
+            e.productQuantity -= 1;
+            console.log(e.productQuantity);
+          }
         }
       });
     },
@@ -27,12 +38,31 @@ export const amountSlice = createSlice({
     increase: (state, action) => {
       state.price += action.payload;
     },
+    decrease: (state, action) => {
+      state.price -= action.payload;
+    },
     addItem: (state, action) => {
       state.items.push(action.payload);
+    },
+
+    remItem: (state, action) => {
+      state.items.forEach((e) => {
+        if (e.productName === action.payload) {
+          state.items.splice(e.indexOf, 1);
+        }
+      });
     },
   },
 });
 
-export const { change, increment, decrement, increase, addItem } =
-  amountSlice.actions;
+export const {
+  addQuant,
+  remQuant,
+  increment,
+  decrement,
+  increase,
+  decrease,
+  addItem,
+  remItem,
+} = amountSlice.actions;
 export default amountSlice.reducer;

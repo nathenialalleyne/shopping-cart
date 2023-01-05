@@ -1,6 +1,13 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { increase, change } from "../redux/cart/cartCount";
+import {
+  increase,
+  addQuant,
+  remQuant,
+  decrease,
+  remItem,
+  decrement,
+} from "../redux/cart/cartCount";
 
 export function CartItem(props) {
   const name = props.name;
@@ -22,10 +29,30 @@ export function CartItem(props) {
           onClick={() => {
             setNewQuant(quantity + 1);
             dispatch(increase(itemPrice));
-            dispatch(change(name));
+            dispatch(addQuant(name));
           }}
         >
           +
+        </button>
+        <button
+          onClick={() => {
+            if (quantity > 0) {
+              setNewQuant(quantity - 1);
+              dispatch(decrease(itemPrice));
+              dispatch(remQuant(name));
+            }
+          }}
+        >
+          -
+        </button>
+        <button
+          onClick={() => {
+            dispatch(decrease(itemPrice * quantity));
+            dispatch(remItem(name));
+            dispatch(decrement());
+          }}
+        >
+          Remove
         </button>
       </div>
     </div>
