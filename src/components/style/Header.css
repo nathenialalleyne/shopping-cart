@@ -33,3 +33,16 @@ a {
 .active {
   color: lightgray;
 }
+
+.cart-indicator {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  left: 100%;
+  bottom: 50%;
+  font-size: 10px;
+  text-align: center;
+}

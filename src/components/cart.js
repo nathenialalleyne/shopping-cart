@@ -14,6 +14,7 @@ export function Cart() {
         price={e.productPrice}
         quant={e.productQuantity}
         key={items.indexOf(e)}
+        img={e.img}
       />
     );
   });

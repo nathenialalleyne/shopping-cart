@@ -18,9 +18,11 @@ export function Products(props) {
 
   const productName = props.name;
   const productPrice = props.price;
+  const productImg = props.img;
   return (
     <div className="product-grid">
       <div>{productName}</div>
+      <img className="shop-img" src={productImg}></img>
       <div>${productPrice}</div>
       <div className="button-div">
         <button
@@ -37,6 +39,7 @@ export function Products(props) {
                   productName,
                   productPrice,
                   productQuantity: 0,
+                  productImg,
                 })
               );
               dispatch(increment());
