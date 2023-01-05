@@ -21,33 +21,38 @@ export function Products(props) {
   const productImg = props.img;
   return (
     <div className="product-grid">
-      <div>{productName}</div>
       <img className="shop-img" src={productImg}></img>
-      <div>${productPrice}</div>
-      <div className="button-div">
-        <button
-          onClick={() => {
-            let found = false;
-            items.forEach((element) => {
-              if (element.productName == productName) {
-                found = true;
+      <div className="bottom-container">
+        <div className="text-container">
+          <h3 className="product-name">{productName}</h3>
+          <div>${productPrice}</div>
+        </div>
+        <div className="button-div">
+          <button
+            className="add-cart"
+            onClick={() => {
+              let found = false;
+              items.forEach((element) => {
+                if (element.productName == productName) {
+                  found = true;
+                }
+              });
+              if (found == false) {
+                dispatch(
+                  addItem({
+                    productName,
+                    productPrice,
+                    productQuantity: 0,
+                    productImg,
+                  })
+                );
+                dispatch(increment());
               }
-            });
-            if (found == false) {
-              dispatch(
-                addItem({
-                  productName,
-                  productPrice,
-                  productQuantity: 0,
-                  productImg,
-                })
-              );
-              dispatch(increment());
-            }
-          }}
-        >
-          add to cart
-        </button>
+            }}
+          >
+            Add to Cart
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -5,7 +5,7 @@ export function Shop(props) {
   const cart = props.products;
   return (
     <div className="shop-container">
-      <h1>Products</h1>
+      <h1 className="shop-header">Products</h1>
       <div className="product-container">
         <Products
           img={require("../assets/bag.jpg")}

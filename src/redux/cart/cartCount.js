@@ -35,11 +35,15 @@ export const amountSlice = createSlice({
     decrement: (state) => {
       state.count -= 1;
     },
+    setPrice: (state, action) => {
+      state.price = action.payload;
+    },
     increase: (state, action) => {
       state.price += action.payload;
     },
     decrease: (state, action) => {
       state.price -= action.payload;
+      console.log(state.price);
     },
     addItem: (state, action) => {
       state.items.push(action.payload);
@@ -60,6 +64,7 @@ export const {
   remQuant,
   increment,
   decrement,
+  setPrice,
   increase,
   decrease,
   addItem,

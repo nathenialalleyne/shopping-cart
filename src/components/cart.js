@@ -1,10 +1,12 @@
-import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setPrice } from "../redux/cart/cartCount";
 import { CartItem } from "./cartItem";
 
 export function Cart() {
   const { items } = useSelector((state) => state.counter);
   const { price } = useSelector((state) => state.counter);
+  const dispatch = useDispatch();
 
   const display = [];
   items.map((e) => {
@@ -17,6 +19,12 @@ export function Cart() {
         img={e.img}
       />
     );
+  });
+
+  useEffect(() => {
+    if (price < 0) {
+      dispatch(setPrice(0));
+    }
   });
   return (
     <div className="cart">

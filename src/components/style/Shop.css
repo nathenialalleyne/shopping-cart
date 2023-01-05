@@ -7,5 +7,11 @@
 .shop-container {
   width: 100%;
   height: 100%;
-  padding-bottom: 2%;
+  padding-right: 2%;
+  overflow-y: scroll;
+  background-color: var(--light-gray);
+}
+
+.shop-header {
+  padding-left: 2%;
 }
