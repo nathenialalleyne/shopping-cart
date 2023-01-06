@@ -25,7 +25,10 @@ export function CartItem(props) {
     <div className="cart-item">
       <img className="product-img" src={img}></img>
       <div className="product-bottom">
-        <h3>{name}</h3>
+        <div>
+          <h3>{name}</h3>
+          <h3>Price: {itemPrice}</h3>
+        </div>
         Quantity:{newQuant}
         <div>
           {" "}
