@@ -33,16 +33,3 @@
 .text-container {
   display: block;
 }
-
-.add-cart {
-  width: 100%;
-  border: none;
-  background-color: var(--light-gray);
-  padding: 8px;
-  font-weight: bold;
-}
-
-.add-cart:hover {
-  background-color: darkgray;
-  cursor: pointer;
-}

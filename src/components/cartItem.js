@@ -13,6 +13,7 @@ export function CartItem(props) {
   const name = props.name;
   const itemPrice = props.price;
   let quantity = props.quant;
+  const img = props.img;
   const [newQuant, setNewQuant] = useState(0);
   const dispatch = useDispatch();
 
@@ -22,38 +23,45 @@ export function CartItem(props) {
 
   return (
     <div className="cart-item">
-      quantity:{newQuant}
-      <div>
-        {" "}
-        <button
-          onClick={() => {
-            setNewQuant(quantity + 1);
-            dispatch(increase(itemPrice));
-            dispatch(addQuant(name));
-          }}
-        >
-          +
-        </button>
-        <button
-          onClick={() => {
-            if (quantity > 0) {
-              setNewQuant(quantity - 1);
-              dispatch(decrease(itemPrice));
-              dispatch(remQuant(name));
-            }
-          }}
-        >
-          -
-        </button>
-        <button
-          onClick={() => {
-            dispatch(decrease(itemPrice * quantity));
-            dispatch(remItem(name));
-            dispatch(decrement());
-          }}
-        >
-          Remove
-        </button>
+      <img className="product-img" src={img}></img>
+      <div className="product-bottom">
+        <h3>{name}</h3>
+        Quantity:{newQuant}
+        <div>
+          {" "}
+          <div className="add-sub-button">
+            <button
+              onClick={() => {
+                setNewQuant(quantity + 1);
+                dispatch(increase(itemPrice));
+                dispatch(addQuant(name));
+              }}
+            >
+              +
+            </button>
+            <button
+              onClick={() => {
+                if (quantity > 0) {
+                  setNewQuant(quantity - 1);
+                  dispatch(decrease(itemPrice));
+                  dispatch(remQuant(name));
+                }
+              }}
+            >
+              -
+            </button>
+          </div>
+          <button
+            className="remove-button"
+            onClick={() => {
+              dispatch(decrease(itemPrice * quantity));
+              dispatch(remItem(name));
+              dispatch(decrement());
+            }}
+          >
+            Remove
+          </button>
+        </div>
       </div>
     </div>
   );
