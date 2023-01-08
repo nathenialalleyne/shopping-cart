@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/shopping-cart/static/css/main.f0a44b27.css",
-    "main.js": "/shopping-cart/static/js/main.fc163ba7.js",
+    "main.js": "/shopping-cart/static/js/main.a3bdc670.js",
     "static/media/background.jpg": "/shopping-cart/static/media/background.cd812a2913eb0f15f56c.jpg",
     "static/media/usb-drive.jpg": "/shopping-cart/static/media/usb-drive.c29563c8a9d1aa8c6c47.jpg",
     "static/media/fire-hydrant.jpg": "/shopping-cart/static/media/fire-hydrant.9139656f54403a92f604.jpg",
@@ -15,10 +15,10 @@
     "static/media/white-out.jpg": "/shopping-cart/static/media/white-out.24e0058a7b3bb6cb8d42.jpg",
     "index.html": "/shopping-cart/index.html",
     "main.f0a44b27.css.map": "/shopping-cart/static/css/main.f0a44b27.css.map",
-    "main.fc163ba7.js.map": "/shopping-cart/static/js/main.fc163ba7.js.map"
+    "main.a3bdc670.js.map": "/shopping-cart/static/js/main.a3bdc670.js.map"
   },
   "entrypoints": [
     "static/css/main.f0a44b27.css",
-    "static/js/main.fc163ba7.js"
+    "static/js/main.a3bdc670.js"
   ]
 }
